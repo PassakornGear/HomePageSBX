@@ -1,0 +1,25 @@
+.box-Input input {
+    border-radius: 50px;
+    border: 1px solid #BEBEBE;
+    background: #FFFFFF;
+    width: 480px;
+    height: 40px;
+}
+
+@media screen and (max-width: 426px) {
+    .box-Input input {
+        width: 370px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .box-Input input {
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .box-Input input {
+        width: 290px;
+    }
+}

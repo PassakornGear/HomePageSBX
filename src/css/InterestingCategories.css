@@ -1,0 +1,78 @@
+.box-Categories {
+  padding: 40px 0px;
+  background-color: #CDE1FF;
+}
+
+.item-Box {
+  padding: 18px 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #4F575E;
+}
+
+.item-Box:hover {
+  border-radius: 8px;
+  border: 1px solid #4263EB;
+  box-shadow: 6px 7px 4px 0px rgba(76, 244, 255, 0.39);
+  /* transform: scale(0.9); */
+}
+
+.grid-Categoies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: stretch;
+  align-items: stretch;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.grid-Categoies-Content {
+  color: #242424;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.icon-Box {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.icon-Box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img {
+  width: 100%;
+  height: 230px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img video {
+  width: 100%;
+  height: 100%;
+}
+
+.myCard-body {
+  flex: 1 1 auto;
+  padding: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-Categoies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media screen and (max-width: 426px) {
+  .grid-Categoies {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

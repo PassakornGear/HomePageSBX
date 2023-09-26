@@ -1,0 +1,49 @@
+.grid-Learning {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: stretch;
+    align-items: stretch;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.grid-Content-Learning {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.img-contatiner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.img-contatiner img:not(:last-child) {
+    margin-right: 10px;
+}
+
+.img-contatiner:hover> :not(:hover) {
+    opacity: 0.4;
+}
+
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .grid-Learning {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .grid-Learning {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

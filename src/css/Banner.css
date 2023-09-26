@@ -1,0 +1,16 @@
+.Banner-layout {
+    width: 100%;
+}
+
+.Banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 426px) {}
+
+
+@media screen and (max-width: 321px) {}
