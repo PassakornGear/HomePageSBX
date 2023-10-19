@@ -12,9 +12,17 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import '../css/Recommend.css'
 
+import AspectRatio from '@mui/joy/AspectRatio';
+import Card from '@mui/joy/Card';
+import CardCover from '@mui/joy/CardCover';
+import CardContent from '@mui/joy/CardContent';
+import CardOverflow from '@mui/joy/CardOverflow';
+import Divider from '@mui/joy/Divider';
+import Typography from '@mui/joy/Typography';
+
 // Reused
 import RatingStars from './Block/Rating';
-import Button from './Block/Button';
+import Buttons from './Block/Button';
 import Found from './Block/NotFound';
 
 
@@ -43,7 +51,7 @@ export default function Recommend(urlList) {
             "courseId": "NH-500",
             "courseTitle": "Interpersonal Communication",
             "detail": "This course will help develop greater interpersonal communication skills by providing insights into communication skills, negotiation techniques, tips on making an impact and advice on getting the most from your conversations and meetings with others.",
-            "image": "https://vlink-tbac.sabacloud.com/content/prodencryption/y_JpO_1Q6vAKP_r90Ej7Kg/1620619138/0060VkVhRHhKVUh5M2QzYXdZRnRnTGR6WHFETWtIM09UdXhGM251RWx5NGNRVT0=U3VuIE1heSAwOSAyMzo1ODo0MyBFRFQgMjAyMQ==/eot/CwlQBwxTCVQJWjUtdmEtZlIDAlNVAgBaDQAGD11cVhZSUgUABVUGAFEHVVIGVAAACGYBW0AUEl0bMSh3.PNG",
+            "image": "https://vlink.sabacloud.com/content/prodencryption/kTsSkiXTX5St81d_HftG9Q/1695351883/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==VGh1IFNlcCAyMSAyMzowNDoyOCBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
             "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000001683",
             "status": "Not Registered",
             "rating": 2
@@ -88,8 +96,6 @@ export default function Recommend(urlList) {
                     </div>
                     {recommendEmty ? (<Found data={setDataNotfoundRecommended}></Found>) : (
                         <Swiper
-                            spaceBetween={30}
-                            slidesPerView={4}
                             pagination={{
                                 dynamicBullets: false,
                                 clickable: true
@@ -109,38 +115,63 @@ export default function Recommend(urlList) {
                                 },
                                 1440: {
                                     slidesPerView: 4,
-                                    spaceBetween: 15,
+                                    spaceBetween: 20,
                                 }
                             }}
                             modules={[Autoplay, Pagination]}
                             className="mySwiper"
                         >
-                            {recommendList && recommendList.length > 0 ? recommendList.map((item) => (
+                            {MockDataRecomment && MockDataRecomment.length > 0 ? MockDataRecomment.map((item) => (
                                 <div key={item.courseId}>
                                     <SwiperSlide className='mb-5'>
                                         <a href={item.link} target='blank'>
-                                            <div className='card'>
-                                                <div className='card-img'>
-                                                    {
-                                                        item.image.substring(item.image.length - 3) === "mp4" ? (
-                                                            <video autoPlay playsInline loop muted controls alt={item.courseTitle} src={item.image} />
-                                                        ) : (
-                                                            <img src={item.image} className="card-img-top" alt={item.courseTitle} />
-                                                        )
-                                                    }
-                                                </div>
-                                                <div className='myCard-body'>
-                                                    <p className='cut-text-multi-1-line h6' alt={item.courseTitle}> {item.courseTitle} </p>
-                                                </div>
-                                                <div className="card-Footer">
-                                                    <div className='d-flex align-items-center justify-content-between'>
-                                                        <div className='rating'>
-                                                            <RatingStars data={item.rating} />
+                                            <Card variant="outlined" className="card">
+                                                <CardOverflow>
+                                                    {item.image.substring(item.image.length - 3) === "mp4" ? (
+                                                        <AspectRatio ratio="2">
+                                                            <CardCover>
+                                                                <video
+                                                                    autoPlay
+                                                                    loop
+                                                                    muted
+                                                                    poster={item.image}
+                                                                >
+                                                                    <source
+                                                                        src={item.image}
+                                                                        type="video/mp4"
+                                                                    />
+                                                                </video>
+                                                            </CardCover>
+                                                        </AspectRatio>
+                                                    ) : (
+                                                        <AspectRatio ratio="2">
+                                                            <CardCover>
+                                                                <img
+                                                                    src={item.image}
+                                                                    className="card-img-top"
+                                                                    alt={item.courseTitle}
+                                                                />
+                                                            </CardCover>
+                                                        </AspectRatio>
+                                                    )}
+                                                </CardOverflow>
+                                                <CardContent>
+                                                    <Typography level="title-md"> <p className="cut-text-multi-1-line h6" alt="{item.courseTitle}">
+                                                        {item.courseTitle}
+                                                    </p></Typography>
+                                                </CardContent>
+                                                <CardOverflow variant="plain">
+                                                    <Divider inset="context" />
+                                                    <div className="card-Footer">
+                                                        <div className='d-flex align-items-center justify-content-between'>
+                                                            <div className="rating">
+                                                                <RatingStars data={item.rating} />
+                                                            </div>
+                                                            <Buttons data={item.status} />
                                                         </div>
-                                                        <Button data={item.status} />
                                                     </div>
-                                                </div>
-                                            </div>
+                                                </CardOverflow>
+                                            </Card>
                                         </a>
                                     </SwiperSlide>
                                 </div>

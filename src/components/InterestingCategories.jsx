@@ -17,6 +17,15 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+// MUI
+import AspectRatio from '@mui/joy/AspectRatio';
+import Card from '@mui/joy/Card';
+import CardCover from '@mui/joy/CardCover';
+import CardContent from '@mui/joy/CardContent';
+import CardOverflow from '@mui/joy/CardOverflow';
+import Divider from '@mui/joy/Divider';
+import Typography from '@mui/joy/Typography';
+
 // Css
 import '../css/InterestingCategories.css';
 import ArrowUp from '../assets/ArrowUpBlack.svg'
@@ -26,11 +35,39 @@ export default function InterestingCategories(urlList) {
     const MockdataInteresting = [
         {
             "courseTitle": "Edutainment Micro Learning (Guru)",
+            "image": "https://vlink.sabacloud.com/content/prodencryption/kTsSkiXTX5St81d_HftG9Q/1695351883/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==VGh1IFNlcCAyMSAyMzowNDoyOCBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
+            "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013859",
+            "status": "Not Registered",
+            "rating": 0.5
+        },
+        {
+            "courseTitle": "หลักสูตร Changing for Growth",
+            "image": "https://vlink-tbac.sabacloud.com/content/prodencryption/y_JpO_1Q6vAKP_r90Ej7Kg/1620619138/0060VkVhRHhKVUh5M2QzYXdZRnRnTGR6WHFETWtIM09UdXhGM251RWx5NGNRVT0=U3VuIE1heSAwOSAyMzo1ODo0MyBFRFQgMjAyMQ==/eot/CwlQBwxTCVQJWjUtdmEtZlIDAlNVAgBaDQAGD11cVhZSUgUABVUGAFEHVVIGVAAACGYBW0AUEl0bMSh3.PNG",
+            "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013862",
+            "status": "Overdue",
+            "rating": 1
+        },
+        {
+            "courseTitle": "Edutainment Micro Learning (Guru)",
+            "image": "https://vlink-tbac.sabacloud.com/content/prodencryption/y_JpO_1Q6vAKP_r90Ej7Kg/1620619138/0060VkVhRHhKVUh5M2QzYXdZRnRnTGR6WHFETWtIM09UdXhGM251RWx5NGNRVT0=U3VuIE1heSAwOSAyMzo1ODo0MyBFRFQgMjAyMQ==/eot/CwlQBwxTCVQJWjUtdmEtZlIDAlNVAgBaDQAGD11cVhZSUgUABVUGAFEHVVIGVAAACGYBW0AUEl0bMSh3.PNG",
+            "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013859",
+            "status": "Re-Assigned",
+            "rating": 1.5
+        },
+        {
+            "courseTitle": "หลักสูตร Changing for Growth",
+            "image": "https://vlink.sabacloud.com/content/prodencryption/kTsSkiXTX5St81d_HftG9Q/1695351883/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==VGh1IFNlcCAyMSAyMzowNDoyOCBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
+            "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013862",
+            "status": "Successful",
+            "rating": 2
+        },
+        {
+            "courseTitle": "Edutainment Micro Learning (Guru)",
             "image": "https://vlink-tbac.sabacloud.com/content/prodencryption/y_JpO_1Q6vAKP_r90Ej7Kg/1620619138/0060VkVhRHhKVUh5M2QzYXdZRnRnTGR6WHFETWtIM09UdXhGM251RWx5NGNRVT0=U3VuIE1heSAwOSAyMzo1ODo0MyBFRFQgMjAyMQ==/eot/CwlQBwxTCVQJWjUtdmEtZlIDAlNVAgBaDQAGD11cVhZSUgUABVUGAFEHVVIGVAAACGYBW0AUEl0bMSh3.PNG",
             "video": "https://vlink.sabacloud.com/content/prodencryption/kTsSkiXTX5St81d_HftG9Q/1695351883/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==VGh1IFNlcCAyMSAyMzowNDoyOCBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
             "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013859",
             "status": "Not Registered",
-            "rating": 0.0
+            "rating": 2.5
         },
         {
             "courseTitle": "หลักสูตร Changing for Growth",
@@ -38,15 +75,15 @@ export default function InterestingCategories(urlList) {
             "video": "https://vlink.sabacloud.com/content/prodencryption/7_nHeM5AXewUEog-Ql_auw/1695612552/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==U3VuIFNlcCAyNCAyMzoyODo1NyBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
             "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013862",
             "status": "Not Evaluated",
-            "rating": 1
+            "rating": 3
         },
         {
             "courseTitle": "Edutainment Micro Learning (Guru)",
             "image": "https://vlink-tbac.sabacloud.com/content/prodencryption/y_JpO_1Q6vAKP_r90Ej7Kg/1620619138/0060VkVhRHhKVUh5M2QzYXdZRnRnTGR6WHFETWtIM09UdXhGM251RWx5NGNRVT0=U3VuIE1heSAwOSAyMzo1ODo0MyBFRFQgMjAyMQ==/eot/CwlQBwxTCVQJWjUtdmEtZlIDAlNVAgBaDQAGD11cVhZSUgUABVUGAFEHVVIGVAAACGYBW0AUEl0bMSh3.PNG",
             "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013859",
             "video": "https://vlink.sabacloud.com/content/prodencryption/7_nHeM5AXewUEog-Ql_auw/1695612552/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==U3VuIFNlcCAyNCAyMzoyODo1NyBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
-            "status": "Pending Registration",
-            "rating": 2
+            "status": "Re-Assigned",
+            "rating": 3.5
         },
         {
             "courseTitle": "หลักสูตร Changing for Growth",
@@ -54,8 +91,26 @@ export default function InterestingCategories(urlList) {
             "video": "https://vlink.sabacloud.com/content/prodencryption/7_nHeM5AXewUEog-Ql_auw/1695612552/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==U3VuIFNlcCAyNCAyMzoyODo1NyBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
             "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013862",
             "status": "Successful",
-            "rating": 3
-        }
+            "rating": 4
+        },
+        {
+            "courseTitle": "Edutainment Micro Learning (Guru)",
+            "image": "https://vlink-tbac.sabacloud.com/content/prodencryption/y_JpO_1Q6vAKP_r90Ej7Kg/1620619138/0060VkVhRHhKVUh5M2QzYXdZRnRnTGR6WHFETWtIM09UdXhGM251RWx5NGNRVT0=U3VuIE1heSAwOSAyMzo1ODo0MyBFRFQgMjAyMQ==/eot/CwlQBwxTCVQJWjUtdmEtZlIDAlNVAgBaDQAGD11cVhZSUgUABVUGAFEHVVIGVAAACGYBW0AUEl0bMSh3.PNG",
+            "video": "https://vlink.sabacloud.com/content/prodencryption/kTsSkiXTX5St81d_HftG9Q/1695351883/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==VGh1IFNlcCAyMSAyMzowNDoyOCBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
+            "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013859",
+            "status": "Not Registered",
+            "rating": 4.5
+        },
+        {
+            "courseTitle": "หลักสูตร Changing for Growth",
+            "image": "https://vlink-tbac.sabacloud.com/content/prodencryption/y_JpO_1Q6vAKP_r90Ej7Kg/1620619138/0060VkVhRHhKVUh5M2QzYXdZRnRnTGR6WHFETWtIM09UdXhGM251RWx5NGNRVT0=U3VuIE1heSAwOSAyMzo1ODo0MyBFRFQgMjAyMQ==/eot/CwlQBwxTCVQJWjUtdmEtZlIDAlNVAgBaDQAGD11cVhZSUgUABVUGAFEHVVIGVAAACGYBW0AUEl0bMSh3.PNG",
+            "video": "https://vlink.sabacloud.com/content/prodencryption/7_nHeM5AXewUEog-Ql_auw/1695612552/0120VkVhRHhKVUh5M2QzYXdZRnRnTGR6VmhHSENZSndwekVTSTRnQzkrOFV5UXcyejlTTWVJOXN1RWVXM1c0eVcvZmd4bjlYNEN3ajRIVVc5bWV3MWpjM2c9PQ==U3VuIFNlcCAyNCAyMzoyODo1NyBFRFQgMjAyMw==/eot/cours000000000011619-110820-015657-557.mp4",
+            "link": "https://vlink.sabacloud.com/Saba/Web_spf/TNBTNT002/common/ledetail/cours000000000013862",
+            "status": "Not Evaluated",
+            "rating": 5
+        },
+
+
     ]
     const MockDataCategories = [
         {
@@ -131,8 +186,8 @@ export default function InterestingCategories(urlList) {
 
     // useEffect
     useEffect(() => {
-        getInterresting(urlList.data.username)
-        getCategories(urlList.data.username)
+        // getInterresting(urlList.data.username)
+        // getCategories(urlList.data.username)
     }, [])
 
     return (
@@ -141,13 +196,11 @@ export default function InterestingCategories(urlList) {
                 <div className="container">
                     <div className='row'>
                         <div className="text-start">
-                            <h1>Courses in Interesting Categories</h1>
+                            <h2>Courses in Interesting Categories</h2>
                         </div>
                         {interrestingEmty ? (<Found data={setDataNotfoundInteresting}></Found>) :
                             (
                                 <Swiper
-                                    spaceBetween={30}
-                                    slidesPerView={4}
                                     pagination={{
                                         dynamicBullets: false,
                                         clickable: true
@@ -167,39 +220,63 @@ export default function InterestingCategories(urlList) {
                                         },
                                         1440: {
                                             slidesPerView: 4,
-                                            spaceBetween: 15,
+                                            spaceBetween: 20,
                                         }
                                     }}
                                     modules={[Autoplay, Pagination]}
                                     className="mySwiper"
                                 >
-                                    {interrestingList && interrestingList.length > 0 ? interrestingList.map((item) => (
+                                    {MockdataInteresting && MockdataInteresting.length > 0 ? MockdataInteresting.map((item) => (
                                         <div key={item.id}>
                                             <SwiperSlide className='mb-5'>
                                                 <a href={item.link} target='blank'>
-                                                    <div className='card'>
-                                                        <div className='card-img'>
-                                                            {
-                                                                item.image.substring(item.image.length - 3) === "mp4" ? (
-                                                                    <video autoPlay playsInline loop muted controls alt={item.courseTitle} src={item.image} />
-                                                                ) : (
-                                                                    <img src={item.image} className="card-img-top" alt={item.courseTitle} />
-                                                                )
-                                                            }
-                                                            {/* <img src={item.image} className="card-img-top" /> */}
-                                                        </div>
-                                                        <div className='myCard-body'>
-                                                            <p className='cut-text-multi-1-line h6'> {item.courseTitle} </p>
-                                                        </div>
-                                                        <div className="card-Footer">
-                                                            <div className='d-flex align-items-center justify-content-between'>
-                                                                <div className="rating">
-                                                                    <RatingStars data={item.rating} />
+                                                    <Card variant="outlined" className="card">
+                                                        <CardOverflow>
+                                                            {item.image.substring(item.image.length - 3) === "mp4" ? (
+                                                                <AspectRatio ratio="2">
+                                                                    <CardCover>
+                                                                        <video
+                                                                            autoPlay
+                                                                            loop
+                                                                            muted
+                                                                            poster={item.image}
+                                                                        >
+                                                                            <source
+                                                                                src={item.image}
+                                                                                type="video/mp4"
+                                                                            />
+                                                                        </video>
+                                                                    </CardCover>
+                                                                </AspectRatio>
+                                                            ) : (
+                                                                <AspectRatio ratio="2">
+                                                                    <CardCover>
+                                                                        <img
+                                                                            src={item.image}
+                                                                            className="card-img-top"
+                                                                            alt={item.courseTitle}
+                                                                        />
+                                                                    </CardCover>
+                                                                </AspectRatio>
+                                                            )}
+                                                        </CardOverflow>
+                                                        <CardContent>
+                                                            <Typography level="title-md"> <p className="cut-text-multi-1-line h6" alt="{item.courseTitle}">
+                                                                {item.courseTitle}
+                                                            </p></Typography>
+                                                        </CardContent>
+                                                        <CardOverflow variant="plain">
+                                                            <Divider inset="context" />
+                                                            <div className="card-Footer">
+                                                                <div className='d-flex align-items-center justify-content-between'>
+                                                                    <div className="rating">
+                                                                        <RatingStars data={item.rating} />
+                                                                    </div>
+                                                                    <Buttons data={item.status} />
                                                                 </div>
-                                                                <Buttons data={item.status} />
                                                             </div>
-                                                        </div>
-                                                    </div>
+                                                        </CardOverflow>
+                                                    </Card>
                                                 </a>
                                             </SwiperSlide>
                                         </div>
@@ -214,7 +291,7 @@ export default function InterestingCategories(urlList) {
                         {CategoriesEmty ? (<Found data={setDataNotfoundCategories}></Found>) :
                             (
                                 <div className="grid-Categoies">
-                                    {categoriesList && categoriesList.length > 0 ? categoriesList.map((items) => (
+                                    {MockDataCategories && MockDataCategories.length > 0 ? MockDataCategories.map((items) => (
                                         <>
                                             <div key={items.id} className="box">
                                                 <a href={items.link} target='blank'>

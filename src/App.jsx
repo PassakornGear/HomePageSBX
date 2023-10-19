@@ -15,20 +15,16 @@ import Interesting from './components/InterestingCategories'
 import HighlightedCourse from './components/HighlightedCourse'
 import TopCoures from './components/TopCoures'
 import Other from './components/otherSources'
-
 import Modal from './components/Block/Modal';
 
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const username = urlParams.get('username');
   const urlHostname = urlParams.get('hostname');
-
   const urlList = {
     username: username,
     hostname: urlHostname
   }
-
-
   return (
     <>
       <Modal data={username} />

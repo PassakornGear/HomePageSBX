@@ -5,6 +5,7 @@ import React from 'react';
 import './css/button.css'
 
 export default function Buttons(btnName) {
+
     let status = btnName.data
     const getStatusColor = (status) => {
         // Define your color logic based on status here
@@ -46,7 +47,7 @@ export default function Buttons(btnName) {
 
     return (
         <>
-            <a className='button-Default' style={{ backgroundColor: getStatusColor(status) }}><small>{getStatusText(status)}</small></a>
+            <button className='btn-sm button-Default' style={{ backgroundColor: getStatusColor(status) }}><small>{getStatusText(status)}</small></button>
         </>
     )
 }

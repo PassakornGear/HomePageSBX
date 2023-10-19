@@ -173,7 +173,6 @@ export default function other() {
                                                 <div key={itemsList.order}>
                                                     <a href={itemsList.itemUrl} target='blank'>
                                                         <figure><img src={itemsList.itemImg} alt={itemsList.itemName} /></figure>
-
                                                     </a>
                                                 </div>
                                             </div>

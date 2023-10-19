@@ -10,6 +10,16 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+// icon Material UI
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import AspectRatio from '@mui/joy/AspectRatio';
+import Card from '@mui/joy/Card';
+import CardCover from '@mui/joy/CardCover';
+import CardContent from '@mui/joy/CardContent';
+import CardOverflow from '@mui/joy/CardOverflow';
+import Divider from '@mui/joy/Divider';
+import Typography from '@mui/joy/Typography';
+
 export default function TopCoures() {
     // MockupData
     const MockDataTopCourse = [
@@ -96,15 +106,11 @@ export default function TopCoures() {
             <div className="box-Categories">
                 <div className="container mt-2">
                     <div className="row">
-                        <div className="col-xxl-4 d-flex align-items-center">
-                            <div className="text-start mb-3">
-                                <h1 style={{ color: "#4263EB" }}>Top 10 Rating</h1> <br />
-                            </div>
+                        <div className="col-xxl-3 d-flex align-items-center">
+                            <h3 style={{ color: "#4263EB" }}>Top 10 Rating</h3> <br />
                         </div>
-                        <div className="col-xxl-8">
+                        <div className="col-xxl-9">
                             <Swiper
-                                spaceBetween={30}
-                                slidesPerView={3}
                                 pagination={{
                                     dynamicBullets: false,
                                     clickable: true
@@ -121,37 +127,64 @@ export default function TopCoures() {
                                     },
                                     1024: {
                                         slidesPerView: 3,
-                                        spaceBetween: 30,
+                                        spaceBetween: 15,
                                     },
+                                    1440: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 20,
+                                    }
                                 }}
                                 className="mySwiper"
                             >
-                                {topCouresList && topCouresList.length > 0 ? topCouresList.map((item) => (
+                                {MockDataTopCourse && MockDataTopCourse.length > 0 ? MockDataTopCourse.map((item) => (
                                     <div key={item.id}>
                                         <SwiperSlide className='mb-5'>
                                             <a href={item.link} target='blank'>
-                                                <div className='card'>
-                                                    <div className='card-img'>
-                                                        {
-                                                            item.image.substring(item.image.length - 3) === "mp4" ? (
-                                                                <video autoPlay playsInline loop muted controls alt={item.courseTitle} src={item.image} />
-                                                            ) : (
-                                                                <img src={item.image} className="card-img-top" alt={item.courseTitle} />
-                                                            )
-                                                        }
-                                                        {/* <img src={item.image} className="card-img-top" /> */}
+                                            <Card variant="outlined" className="card">
+                                                <CardOverflow>
+                                                    {item.image.substring(item.image.length - 3) === "mp4" ? (
+                                                        <AspectRatio ratio="2">
+                                                            <CardCover>
+                                                                <video
+                                                                    autoPlay
+                                                                    loop
+                                                                    muted
+                                                                    poster={item.image}
+                                                                >
+                                                                    <source
+                                                                        src={item.image}
+                                                                        type="video/mp4"
+                                                                    />
+                                                                </video>
+                                                            </CardCover>
+                                                        </AspectRatio>
+                                                    ) : (
+                                                        <AspectRatio ratio="2">
+                                                            <CardCover>
+                                                                <img
+                                                                    src={item.image}
+                                                                    className="card-img-top"
+                                                                    alt={item.image}
+                                                                />
+                                                            </CardCover>
+                                                        </AspectRatio>
+                                                    )}
+                                                </CardOverflow>
+                                                <CardContent>
+                                                    <div className="card-body">
+                                                        <Typography level="title-md"> <p className='cut-text-multi-2-line h6' alt={item.title}> {item.title} </p> </Typography>
+                                                        <Typography level="title-md"> <p className="cut-text-multi-3-line" alt={item.detail}> {item.detail} </p> </Typography>
                                                     </div>
-                                                    <div className='card-body'>
-                                                        <p className='cut-text-multi-1-line h6' alt={item.title}> {item.title} </p>
-                                                        <p className="cut-text-multi-3-line" alt={item.detail}> {item.detail} </p>
-                                                    </div>
-                                                    <hr />
-                                                    <div className='card-Footer'>
+                                                </CardContent>
+                                                <CardOverflow variant="plain">
+                                                    <Divider inset="context" />
+                                                    <div className="card-Footer">
                                                         <div className="d-flex justify-content-end">
-                                                            <a className="btn btn-secondary" href={item.link} target='blank'><small><i className="fas fa-external-link-alt"></i></small></a>
+                                                            <a className="btn btn-secondary" href={item.link} target='blank'><small><ArrowOutwardIcon /></small></a>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </CardOverflow>
+                                            </Card>
                                             </a>
                                         </SwiperSlide>
                                     </div>

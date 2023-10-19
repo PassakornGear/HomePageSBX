@@ -28,3 +28,13 @@
     background-color: #FF8A00;
     border: 1px solid #FF8A00;
 }
+
+a u h5 {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+@media screen and (max-width: 426px) {
+    
+}

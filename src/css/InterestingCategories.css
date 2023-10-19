@@ -8,13 +8,14 @@
   background-color: #ffffff;
   border-radius: 8px;
   border: 1px solid #4F575E;
+  transition: transform 0.3s;
 }
 
 .item-Box:hover {
   border-radius: 8px;
   border: 1px solid #4263EB;
-  box-shadow: 6px 7px 4px 0px rgba(76, 244, 255, 0.39);
-  /* transform: scale(0.9); */
+  /* box-shadow: 6px 7px 4px 0px rgba(76, 244, 255, 0.39); */
+  transform: scale(0.9); 
 }
 
 .grid-Categoies {
@@ -63,6 +64,15 @@
   flex: 1 1 auto;
   padding: 16px;
 }
+
+@media screen and (max-width: 1024px) {
+  .grid-Categoies {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
 
 @media screen and (max-width: 768px) {
   .grid-Categoies {

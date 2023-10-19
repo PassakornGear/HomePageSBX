@@ -5,6 +5,9 @@ import img from '../../assets/Popup/annouce.png'
 // css
 import './css/Modal.css'
 
+//
+import CloseIcon from '@mui/icons-material/Close';
+
 export default function Modal(username) {
 
     async function handleCloseModal(username) {

@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+.row>* {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 body {
   font-family: 'Prompt', 'Inter', 'Poppins', 'Raleway', 'Roboto', sans-serif;
   font-size: 16px;
@@ -132,12 +137,13 @@ a {
 .swiper-slide:hover .card {
   color: #272B30;
   transform: scale(0.9);
+  /* box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15); */
 }
 
 .card {
   border: 1px solid #EEE;
   position: relative;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: transform 0.3s;
   cursor: pointer;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
@@ -155,11 +161,11 @@ a {
 
 .card-body {
   padding: 16px 16px 0px 16px;
-  height: 150px;
+  min-height: 130px;
 }
 
 .card-Footer {
-  padding: 16px;
+  padding: 8px 0px;
 }
 
 .btn-Radius {
@@ -225,8 +231,6 @@ a {
   height: auto;
 }
 
-@media screen and (max-width: 1440px) {}
-
 @media screen and (max-width: 1024px) {
   body {
     font-weight: 400;
@@ -279,7 +283,7 @@ a {
 
   p {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 0.38px;
     line-height: 24px;
   }
@@ -292,7 +296,14 @@ a {
   }
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.38px;
+    line-height: 24px;
+  }
+}
 
 @media screen and (max-width: 426px) {
   body {
@@ -300,6 +311,10 @@ a {
     font-size: 14px;
     letter-spacing: -.032px;
     line-height: 16px;
+  }
+
+  .card {
+    max-width: 425px;
   }
 
   h1 {
@@ -362,6 +377,30 @@ a {
 @media screen and (max-width: 376px) {}
 
 @media screen and (max-width: 321px) {
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 20px;
+  }
+
+  h4,
+  h5,
+  h6,
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  small {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
   h6 {
     font-weight: 500;
     font-size: 14px;

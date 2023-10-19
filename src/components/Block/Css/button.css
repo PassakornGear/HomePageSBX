@@ -1,8 +1,14 @@
 /* Button Defa */
 .button-Default {
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 6px 10px;
+  font-weight: 900;
+  font-size: 12px;
   cursor: pointer;
   border-radius: 50px;
   border: none;
 }
+
+/* .button-Default:hover {
+  color: #ffffff;
+} */
